@@ -23,35 +23,42 @@ function love.load()
     sidebar = {
         x = board.width + squares(border + 3), -- 3 = 1 for 
         y = board.y + squares(border)
-    } 
-    window = { 
+    }
+    window = {
         height = board.y,
         width = board.x + border * 2 + sidebar_width
     }
 
     -- shapes
-    shapes = {                                                            
-      { {0, 1, 0},                                                              
-        {1, 1, 1}                                                               
-      },                                                                        
-      { {0, 1, 1},                                                              
-      {1, 1, 0}                                                               
-      },                                                                        
-      { {1, 1, 0},                                                              
-        {0, 1, 1}                                                               
-      },                                                                        
-      { {1, 1, 1, 1}                                                            
-      },                                                                        
-      { {1, 1},                                                                 
-        {1, 1}                                                                  
-      },                                                                        
-      { {1, 0, 0},                                                              
-        {1, 1, 1}                                                               
-      },                                                                        
-      { {0, 0, 1},                                                              
-        {1, 1, 1}                                                               
-      }                                                                         
-    }  
+    shapes = {
+        tee = {
+            {0, 1, 0},
+            {1, 1, 1}
+        },
+        ess = {
+            {0, 1, 1},
+            {1, 1, 0}
+        },
+        zee = {
+            {1, 1, 0},
+            {0, 1, 1}
+        },
+        bar = {
+            {1, 1, 1, 1}
+        },
+        oh = {
+            {1, 1},
+            {1, 1}
+        },
+        jay = {
+            {1, 0, 0},
+            {1, 1, 1}
+        },
+        ell = {
+            {0, 0, 1},
+            {1, 1, 1}
+        }
+    }
 end
 
 -- update the game state
@@ -83,4 +90,8 @@ function draw_table_border(dt)
     for column = 1, board.squares_width + 2 do
         love.graphics.draw(grey_square, squares(column), board.height)
     end
+end
+
+-- draw a shape somewhere on the board
+function draw_shape(origin, shape)
 end
